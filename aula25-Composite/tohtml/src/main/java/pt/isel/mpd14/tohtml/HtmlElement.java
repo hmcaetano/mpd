@@ -14,7 +14,7 @@ import java.util.List;
  * @author Miguel Gamboa at CCISEL
  */
 public class HtmlElement implements HtmlNode{
-    final String name;
+    final String name, indent = "   ";
     final List<HtmlNode> children;
 
     public HtmlElement(String name) {
@@ -33,11 +33,15 @@ public class HtmlElement implements HtmlNode{
     }
     
     public String print(){
-        String res = "<" + name + ">\n";
+        return print("");
+    }
+    
+    public String print(String indent){
+        String res = indent + "<" + name + ">\n";
         for (HtmlNode n : children) {
-            res += n.print();
+            res += n.print(this.indent+indent);
         }
-        res += "</" + name + ">\n";
+        res += indent + "</" + name + ">\n";
         return res;
     }
 }

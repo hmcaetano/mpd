@@ -13,5 +13,6 @@ package pt.isel.mpd14.tohtml;
 interface HtmlNode {
 
     String print();
+    String print(String indent);
     
 }

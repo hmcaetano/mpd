@@ -22,5 +22,10 @@ class TextNode implements HtmlNode{
     public String print() {
         return content;
     }
+
+    @Override
+    public String print(String indent) {
+        return indent + content;
+    }
     
 }
