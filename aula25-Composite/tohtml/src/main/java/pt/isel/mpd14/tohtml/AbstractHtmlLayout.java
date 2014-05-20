@@ -12,7 +12,7 @@ package pt.isel.mpd14.tohtml;
  */
 public abstract class AbstractHtmlLayout {
     
-    public String buildPage(Object o){
+    public final String buildPage(Object o){
     /*    String res = "<html>\n";
         res += "   <head>\n";
         res += buildHeadContent(o);

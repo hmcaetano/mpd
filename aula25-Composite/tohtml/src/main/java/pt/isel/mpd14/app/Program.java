@@ -21,7 +21,7 @@ public class Program
         // PrintStream out = new PrintStream(new FileOutputStream("Stud2.html"));
         PrintStream out = System.out;
         
-        // new HtmlWriter(out, new TableLayout()).write(s);
-        new HtmlWriter(out, new SimpleLayout()).write(s);
+         new HtmlWriter(out, new TableLayout()).write(s);
+        //new HtmlWriter(out, new SimpleLayout()).write(s);
     }
 }

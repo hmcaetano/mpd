@@ -23,10 +23,6 @@ public class SimpleLayout extends AbstractHtmlLayout{
 
     @Override
     protected HtmlElement buildHeadContent(Object o) {
-        /*String res = "       <title>";
-        res += o.getClass();
-        res += "</title>\n";
-        return res;*/
         HtmlElement title = new HtmlElement("title");
         title.add(new TextNode(o.getClass().toString()));
         return title;
