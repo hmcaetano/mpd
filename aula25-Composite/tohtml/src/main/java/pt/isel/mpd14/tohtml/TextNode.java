@@ -10,7 +10,7 @@ package pt.isel.mpd14.tohtml;
  *
  * @author Miguel Gamboa at CCISEL
  */
-class TextNode implements HtmlNode{
+public class TextNode implements HtmlNode{
 
     final String content;
     
