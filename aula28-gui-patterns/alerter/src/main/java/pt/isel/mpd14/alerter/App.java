@@ -8,7 +8,8 @@ public class App
 {
     public static void main( String[] args )
     {
-        Alarm a = new Alarm();
+       // Alarm a = new Alarm(new MessageBoxAlert());
+        Alarm a = new Alarm(new PrintAlert());
         long now = System.currentTimeMillis();
         a.addEvent(now + 2000);
         a.addEvent(now + 5000);

@@ -14,7 +14,11 @@ import java.util.TreeSet;
  * @author Miguel Gamboa at CCISEL
  */
 public class Alarm {
-
+    private final IAlert alerter;
+    
+    public Alarm(IAlert alert){
+        this.alerter = alert;
+    }
     /*
      * Cada evento é representado por um instante de tempo em Milisegundos
     */
@@ -30,7 +34,7 @@ public class Alarm {
         Long instant = iter.hasNext() ? iter.next() : null;
         while (instant != null) {
             if (System.currentTimeMillis() >= instant) {
-                System.out.println("Triiiim");
+                alerter.alert(instant);
                 iter.remove();
                 instant = iter.hasNext() ? iter.next() : null;
             }

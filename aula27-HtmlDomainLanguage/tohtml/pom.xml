@@ -7,7 +7,7 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>tohtml</name>
+  <name>aula27-HtmlDomainLanguage</name>
   <url>http://maven.apache.org</url>
     <build>
         <plugins>
