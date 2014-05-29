@@ -8,6 +8,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import javax.sql.DataSource;
 
 /**
@@ -18,13 +20,6 @@ public class App
 {
     public static void main( String[] args ) throws SQLException
     {
-         final String connectionUrl = 
-			"jdbc:sqlserver://localhost:1433;" +
-			"databaseName=Northwind;" + 
-			"user=myAppUser;password=fcp";
-        
-        // Connection c = DriverManager.getConnection(connectionUrl);
-         
         SQLServerDataSource ds = new SQLServerDataSource();
         ds.setUser("myAppUser");
         ds.setPassword("fcp");
@@ -39,12 +34,9 @@ public class App
         cmd.setDouble(1, 30.0);
         cmd.setInt(2, 20);
         ResultSet rs = cmd.executeQuery();
-        int count = 0;
-        while(rs.next())
-        {
-            System.out.println(format("%d %s %f %d", rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getInt(4)));
-            count++;
-        }
-        System.out.println("Fetched " + count + " rows");
+        Iterable<Product> products = ProductDTO.getProducts(rs);
+        
+        for(Product p : products)
+            System.out.println(format("%d %s %f %d", p.id, p.name, p.price, p.unitsInStock));
     }
 }

@@ -7,7 +7,7 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>sqlfw</name>
+  <name>aula30-jdbc-intro</name>
   <url>http://maven.apache.org</url>
 
   <properties>
